@@ -1,7 +1,0 @@
-POST http://localhost:8081/test
-Content-Type: application/json
-
-{
-  "postText": "woi",
-  "isPriate": "woi 2"
-}
