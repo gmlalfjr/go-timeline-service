@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package main;
+
+option go_package="./proto";
+
+import "google/api/annotations.proto";
+
+
+service Timeline {
+  rpc CreateTimeline(TimelineRequest) returns (TimelineResponse){
+    option(google.api.http) = {
+          post: "/test"
+          body: "*"
+        };
+  }
+}
+
+message TimelineRequest {
+  string postText = 1;
+  string isPrivate = 2;
+}
+
+message TimelineResponse {
+  string postText = 1;
+  string isPrivate = 2;
+}
