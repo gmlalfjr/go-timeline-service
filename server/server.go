@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/gmlalfjr/timeline-service/gen/proto"
+	pb "github.com/gmlalfjr/timeline-service/grpc-gateway/gen/proto/timeline"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 	"log"

@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/gmlalfjr/timeline-service/gen/proto"
+	pb "github.com/gmlalfjr/timeline-service/grpc-gateway/gen/proto/timeline"
 	"google.golang.org/grpc"
 	"log"
 )
@@ -23,5 +23,5 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(resp)
-	fmt.Println(resp.Success)
+	fmt.Println(resp.PostText)
 }
