@@ -13,6 +13,10 @@ type TimelineRepository struct {
 	db *gorm.DB
 }
 
+func NewTimelineRepository(db *gorm.DB) *TimelineRepository {
+	return &TimelineRepository{db: db}
+}
+
 func (t TimelineRepository) CreateTimeline(timeline *entity.Timeline) (*entity.Timeline, error) {
 	return nil, nil
 }

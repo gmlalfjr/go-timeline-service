@@ -3,13 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/gmlalfjr/timeline-service/grpc-gateway/gen/proto/timeline"
+	pb "github.com/gmlalfjr/timeline-service/gen/proto/timeline"
 	"google.golang.org/grpc"
 	"log"
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost:8080", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:8081", grpc.WithInsecure())
 	if err != nil {
 		log.Println(err)
 	}

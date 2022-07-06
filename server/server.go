@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/gmlalfjr/timeline-service/grpc-gateway/gen/proto/timeline"
+	pb "github.com/gmlalfjr/timeline-service/gen/proto/timeline"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 	"log"
@@ -26,8 +26,12 @@ func (s Server) CreateTimeline(ctx context.Context, n *pb.TimelineRequest) (*pb.
 func main() {
 	go func() {
 		mux := runtime.NewServeMux()
-		pb.RegisterTimelineHandlerServer(context.Background(), mux, &Server{})
-		err := http.ListenAndServe("localhost:8081", mux)
+		err := pb.RegisterTimelineHandlerServer(context.Background(), mux, &Server{})
+		if err != nil {
+			fmt.Println(err, "log error")
+			panic(err)
+		}
+		err = http.ListenAndServe("localhost:8081", mux)
 		if err != nil {
 			fmt.Println(err, "log error")
 		}
