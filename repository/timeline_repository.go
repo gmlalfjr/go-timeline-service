@@ -13,7 +13,7 @@ type TimelineRepository struct {
 	db *gorm.DB
 }
 
-func NewTimelineRepository(db *gorm.DB) *TimelineRepository {
+func NewTimelineRepository(db *gorm.DB) ITimelineRepository {
 	return &TimelineRepository{db: db}
 }
 

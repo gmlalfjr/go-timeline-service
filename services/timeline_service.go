@@ -13,7 +13,7 @@ type TimelineService struct {
 	repository repository.ITimelineRepository
 }
 
-func NewTimelineService(repository repository.ITimelineRepository) *TimelineService {
+func NewTimelineService(repository repository.ITimelineRepository) ITimelineService {
 	return &TimelineService{
 		repository: repository,
 	}

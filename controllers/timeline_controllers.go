@@ -13,7 +13,7 @@ type TimelineController struct {
 	service services.ITimelineService
 }
 
-func NewTimelineController(service services.ITimelineService) *TimelineController {
+func NewTimelineController(service services.ITimelineService) ITimelineController {
 	return &TimelineController{service: service}
 }
 

@@ -23,5 +23,5 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(resp)
-	fmt.Println(resp.PostText)
+	fmt.Println(resp.Data)
 }
